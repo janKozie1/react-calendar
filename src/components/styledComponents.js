@@ -2,6 +2,7 @@ import { createGlobalStyle, css } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
     html{
+        @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
         height:100%;
         width:100%;
         ${({ theme: { fonts, colors } }) =>
@@ -17,11 +18,7 @@ export const GlobalStyles = createGlobalStyle`
         padding:0;
         box-sizing:border-box;
         ${({ theme: { colors } }) => css`
-            background: linear-gradient(
-                to bottom right,
-                ${colors.light},
-                ${colors.dark}
-            );
+            background: ${colors.background};
         `}
         *{
             &,&::after,&::before{

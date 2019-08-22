@@ -1,11 +1,12 @@
 export const theme = {
     colors: {
-        main: '#E91E63',
+        main: '#00DA9A',
         font: '#263238',
-        light: '#8bd5dc',
-        dark: '#62a6cf'
+        light: '#00DA9A',
+        dark: '#01D8B6',
+        background: '#E7FDF8'
     },
     fonts: {
-        main: `'Raleway',Arial`
+        main: `'Roboto',Arial`
     }
 }
