@@ -9,7 +9,6 @@ import * as S from './styledComponents'
 
 const App = () => {
     const [state, dispatch] = useStateValue()
-    console.log(state)
     return (
         <>
             <S.GlobalStyles />

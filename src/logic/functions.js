@@ -31,7 +31,7 @@ let getDayArray = (year, month) => {
     )
 }
 
-export let createMonthData = (
+export let getMonthData = (
     year = new Date().getFullYear(),
     month = new Date().getMonth()
 ) => {
@@ -54,4 +54,12 @@ export let createMonthData = (
             }
         }
     })
+}
+
+export let getYearMonthDay = (date = new Date()) => {
+    return {
+        year: date.getFullYear(),
+        month: date.getMonth(),
+        day: date.getDay()
+    }
 }
