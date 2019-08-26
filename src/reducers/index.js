@@ -7,6 +7,8 @@ export let rootReducer = (state, action) => {
                 ...state,
                 displayDate: getYearMonthDay(new Date(year, month))
             }
+        case 'SELECT_DAY':
+            return { ...state, selectedDay: { ...action.payload } }
         default:
             return { ...state }
     }

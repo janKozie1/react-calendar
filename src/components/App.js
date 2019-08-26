@@ -8,7 +8,6 @@ import DayInfo from './DayInfo'
 import * as S from './styledComponents'
 
 const App = () => {
-    const [state, dispatch] = useStateValue()
     return (
         <>
             <S.GlobalStyles />

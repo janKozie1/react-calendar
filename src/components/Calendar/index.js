@@ -16,7 +16,9 @@ const Calendar = () => {
         },
         dispatch
     ] = useStateValue()
-
+    let handleDaySelect = day => {
+        dispatch({ type: 'SELECT_DAY', payload: day })
+    }
     let monthData = getMonthData(year, month)
     return (
         <S.Calendar>
@@ -28,9 +30,10 @@ const Calendar = () => {
                                 type: 'CHANGE_DISPLAY_DATE',
                                 payload: { year, month: month - 1 }
                             })
-                        }
-                    />
-                    {monthNames[month].long}
+                        }>
+                        <S.Icon />
+                    </S.Button>
+                    <span>{monthNames[month].long}</span>
                     <S.Button
                         mirrored
                         onClick={() =>
@@ -38,10 +41,13 @@ const Calendar = () => {
                                 type: 'CHANGE_DISPLAY_DATE',
                                 payload: { year, month: month + 1 }
                             })
-                        }
-                    />
+                        }>
+                        <S.Icon />
+                    </S.Button>
                 </S.Month>
-                <S.Year>{year}</S.Year>
+                <S.Year>
+                    <span>{year}</span>
+                </S.Year>
             </S.Header>
 
             <S.Days>
@@ -56,6 +62,8 @@ const Calendar = () => {
                             key={`${e.year}-${e.month}-${e.day}`}
                             data={e}
                             currentMonth={month}
+                            selectedDay={selectedDay}
+                            onClick={handleDaySelect}
                         />
                     ))}
                 </>

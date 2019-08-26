@@ -41,6 +41,7 @@ export let Header = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
 `
 
 export let Month = styled.div`
@@ -56,21 +57,31 @@ export let Month = styled.div`
 export let Year = styled.div`
     color: #e7e7e7;
     font-size: 50px;
+    user-select: none;
 `
 
-export let Button = styled(bg)`
+export let Button = styled.button`
     font-size: 23px;
     background: none;
-    width: 30px;
-    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 0;
+    user-select: none;
+
     cursor: pointer;
-    > path {
-        fill: #737373;
-    }
     ${({ mirrored }) =>
         mirrored &&
         css`
             transform: rotate(180deg);
         `}
+`
+
+export let Icon = styled(bg)`
+    width: 30px;
+    height: 30px;
+    border: 0;
+    > path {
+        fill: #737373;
+    }
 `

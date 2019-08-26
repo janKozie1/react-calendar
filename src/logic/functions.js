@@ -30,20 +30,18 @@ let getDayArray = (year, month) => {
             : getDayIndex(year, month, i - firstDay + 1)
     )
 }
+export let getDayName = (year, month, day) => {
+    return dayNames[new Date(year, month, day).getDay()]
+}
+export let getMonthName = (year, month) => {
+    return monthNames[new Date(year, month).getMonth()]
+}
 
 export let getMonthData = (
     year = new Date().getFullYear(),
     month = new Date().getMonth()
 ) => {
     //0 for january
-
-    let getDayName = (year, month, day) => {
-        return dayNames[new Date(year, month, day).getDay()]
-    }
-
-    let getMonthName = (year, month) => {
-        return monthNames[new Date(year, month).getMonth()]
-    }
 
     return getDayArray(year, month).map(e => {
         return {
@@ -60,6 +58,14 @@ export let getYearMonthDay = (date = new Date()) => {
     return {
         year: date.getFullYear(),
         month: date.getMonth(),
-        day: date.getDay()
+        day: date.getDate()
     }
+}
+
+export let getDayType = day => {
+    day = day + ''
+    if (/(?<!1)1$/.test(day)) return 'st'
+    if (/(?<!1)2$/.test(day)) return 'nd'
+    if (/(?<!1)3$/.test(day)) return 'rd'
+    return 'th'
 }
