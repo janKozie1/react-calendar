@@ -9,7 +9,8 @@ const Day = ({
     currentMonth,
     selectedDay,
     onClick,
-    events
+    events,
+    eventDetailsOpen
 }) => {
     let isInCurrentMonth = currentMonth === month
     let isSelected = isThisDay({ year, month, day }, selectedDay)

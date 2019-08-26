@@ -7,7 +7,6 @@ import * as S from './styledComponents'
 
 const Events = () => {
     const [{ events }, dispatch] = useStateValue()
-    console.log(events)
     return (
         <S.Container>
             <S.Title>
@@ -16,7 +15,16 @@ const Events = () => {
             <S.EventList>
                 {events.map((e, i) => {
                     return (
-                        <S.Event>
+                        <S.Event
+                            key={e._id}
+                            onClick={() =>
+                                dispatch({
+                                    type: 'SHOW_EVENT_DETAILS',
+                                    payload: {
+                                        e
+                                    }
+                                })
+                            }>
                             <S.Completed></S.Completed>
                             <S.EventDesc>
                                 <S.EventTitle>{e.title}</S.EventTitle>
@@ -33,6 +41,9 @@ const Events = () => {
                                     / {e.hours.start} - {e.hours.end}
                                 </S.EventDate>
                             </S.EventDesc>
+                            <S.IconContainer>
+                                <S.Continue />
+                            </S.IconContainer>
                         </S.Event>
                     )
                 })}

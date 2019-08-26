@@ -77,3 +77,12 @@ export let isThisDay = (day1, day2) => {
         day1.year === day2.year
     )
 }
+
+export let getRandomID = () => {
+    return (
+        '_' +
+        Math.random()
+            .toString(36)
+            .substr(2, 9)
+    )
+}

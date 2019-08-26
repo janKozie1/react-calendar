@@ -9,6 +9,17 @@ export let rootReducer = (state, action) => {
             }
         case 'SELECT_DAY':
             return { ...state, selectedDay: { ...action.payload } }
+        case 'SHOW_EVENT_DETAILS':
+            return {
+                ...state,
+                eventDetailsOpen: true,
+                selectedEvent: action.payload
+            }
+        case 'HIDE_EVENT_DETAILS':
+            return {
+                ...state,
+                eventDetailsOpen: false
+            }
         default:
             return { ...state }
     }

@@ -1,20 +1,36 @@
 import styled, { css } from 'styled-components'
 
-export let DayInfo = styled.div`
+export let Container = styled.div`
     width: 545px;
     height: 709px;
     z-index: 2;
     position: relative;
+    overflow: hidden;
+    box-shadow: -1px 0 10px 3px #a3ffff;
+    ${({ theme: { colors } }) => css`
+        background: linear-gradient(to bottom, ${colors.main}, ${colors.dark});
+    `}
+`
+
+export let DayInfo = styled.div`
+    height: 100%;
+    width: 100%;
     padding: 80px;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    ${({ theme: { colors } }) => css`
-        background: linear-gradient(to bottom, ${colors.main}, ${colors.dark});
-    `}
-    box-shadow:-1px 0 10px 3px #a3ffff;
+    transition: transform 0.4s ease-in-out;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    ${({ shown }) =>
+        shown &&
+        css`
+            transform: translate(0%);
+        `}
 `
 
 export let Header = styled.header`

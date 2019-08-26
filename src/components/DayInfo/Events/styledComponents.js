@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { ReactComponent as add } from '../../../assets/icons/add.svg'
+import { ReactComponent as arrow } from '../../../assets/icons/thin_arrow.svg'
 export let Container = styled.div`
     width: 100%;
     height: 300px;
@@ -29,6 +30,7 @@ export let Icon = styled(add)`
     height: 27px;
     width: 27px;
     cursor: pointer;
+
     > path {
         fill: white;
     }
@@ -57,8 +59,17 @@ export let EventList = styled.ul`
 
 export let Event = styled.li`
     display: flex;
-    height: 33%;
+    height: 33.33%;
+    cursor: pointer;
     align-items: center;
+    transition: background 0.2s ease;
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        svg {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
 `
 export let Completed = styled.div`
     height: 10px;
@@ -81,5 +92,22 @@ export let EventDate = styled.p`
     color: rgba(255, 255, 255, 0.6);
     > span {
         text-transform: capitalize;
+    }
+`
+
+export let IconContainer = styled.div`
+    margin-left: auto;
+    margin-right: 0;
+    margin-right: 20px;
+`
+export let Continue = styled(arrow)`
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    padding: 5px;
+    border-radius: 50%;
+    transition: opacity 0.2s ease-in-out;
+    > path {
+        fill: white;
     }
 `
