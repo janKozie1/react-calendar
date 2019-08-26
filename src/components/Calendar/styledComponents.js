@@ -55,7 +55,7 @@ export let Month = styled.div`
 `
 
 export let Year = styled.div`
-    color: #e7e7e7;
+    color: #ddd;
     font-size: 50px;
     user-select: none;
 `

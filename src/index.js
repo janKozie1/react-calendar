@@ -10,7 +10,7 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 
 import { getYearMonthDay } from './logic/functions'
-import { defaultEvents } from './defaults'
+import { defaultEvents, emptyEvent } from './defaults'
 ReactDom.render(
     <ThemeProvider theme={theme}>
         <StateProvider
@@ -20,8 +20,9 @@ ReactDom.render(
                 selectedDay: getYearMonthDay(),
                 events: defaultEvents,
                 eventDetailsOpen: false,
-                selectedEvent: {}
-            }}>
+                selectedEvent: emptyEvent
+            }}
+        >
             <App />
         </StateProvider>
     </ThemeProvider>,

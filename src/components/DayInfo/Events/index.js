@@ -2,29 +2,27 @@ import React from 'react'
 
 import { useStateValue } from '../../../store'
 import { getMonthName } from '../../../logic/functions'
-
+import { emptyEvent } from '../../../defaults'
 import * as S from './styledComponents'
 
 const Events = () => {
     const [{ events }, dispatch] = useStateValue()
+    let openEventView = data => {
+        dispatch({
+            type: 'SHOW_EVENT_DETAILS',
+            payload: data
+        })
+    }
     return (
         <S.Container>
             <S.Title>
-                Upcoming Events <S.Icon />
+                Upcoming Events{' '}
+                <S.Icon onClick={() => openEventView(emptyEvent)} />
             </S.Title>
             <S.EventList>
                 {events.map((e, i) => {
                     return (
-                        <S.Event
-                            key={e._id}
-                            onClick={() =>
-                                dispatch({
-                                    type: 'SHOW_EVENT_DETAILS',
-                                    payload: {
-                                        e
-                                    }
-                                })
-                            }>
+                        <S.Event key={e._id} onClick={() => openEventView(e)}>
                             <S.Completed></S.Completed>
                             <S.EventDesc>
                                 <S.EventTitle>{e.title}</S.EventTitle>

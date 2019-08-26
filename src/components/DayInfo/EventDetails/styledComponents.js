@@ -11,11 +11,22 @@ export let Container = styled.div`
     transform: translateX(100%);
     pointer-events: none;
     transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     ${({ shown }) =>
         shown &&
         css`
             transform: translate(0);
+            pointer-events: all;
         `}
+`
+
+export let Actions = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `
 
 export let Button = styled.button`
@@ -28,6 +39,8 @@ export let Button = styled.button`
     align-items: center;
     justify-content: center;
     color: white;
+    outline: none;
+    cursor: pointer;
     ${({
         theme: {
             colors: { main }
@@ -38,5 +51,27 @@ export let Button = styled.button`
         css`
         color:${main}
         background:white;
+        font-weight:bolder;
     `}
+`
+export let Title = styled.label`
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    span {
+        margin-bottom: 20px;
+    }
+`
+
+export let Input = styled.input`
+    border: 0;
+    width: 50%;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    font-family: inherit;
+    border: 2px solid white;
+    color: white;
+    margin-left: 20px;
 `

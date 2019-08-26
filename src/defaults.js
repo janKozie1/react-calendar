@@ -43,3 +43,17 @@ export let defaultEvents = [
         description: ''
     }
 ]
+
+export let emptyEvent = {
+    title: '',
+    desc: '',
+    date: {
+        year: null,
+        month: null,
+        day: null
+    },
+    time: {
+        start: '',
+        end: ''
+    }
+}
