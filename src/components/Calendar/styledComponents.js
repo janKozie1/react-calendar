@@ -36,7 +36,7 @@ export const DayName = styled(Cell)`
 `
 
 export let Header = styled.header`
-    width: 70%;
+    width: 455px;
     height: 64px;
     display: flex;
     align-items: center;

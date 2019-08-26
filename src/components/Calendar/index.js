@@ -12,7 +12,8 @@ const Calendar = () => {
     let [
         {
             displayDate: { year, month },
-            selectedDay
+            selectedDay,
+            events
         },
         dispatch
     ] = useStateValue()
@@ -64,6 +65,7 @@ const Calendar = () => {
                             currentMonth={month}
                             selectedDay={selectedDay}
                             onClick={handleDaySelect}
+                            events={events}
                         />
                     ))}
                 </>

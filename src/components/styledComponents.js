@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components'
+import styled, { createGlobalStyle, css } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
     html{
@@ -35,4 +35,12 @@ export const GlobalStyles = createGlobalStyle`
         align-items:center;
         justify-content:center;
     }
+`
+
+export let Link = styled.a`
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    color: #666;
 `

@@ -69,3 +69,11 @@ export let getDayType = day => {
     if (/(?<!1)3$/.test(day)) return 'rd'
     return 'th'
 }
+
+export let isThisDay = (day1, day2) => {
+    return (
+        day1.day === day2.day &&
+        day1.month === day2.month &&
+        day1.year === day2.year
+    )
+}

@@ -1,22 +1,27 @@
 import React from 'react'
 
+import { isThisDay } from '../../../logic/functions'
+
 import * as S from './styledComponents.js'
 
 const Day = ({
     data: { year, month, day },
     currentMonth,
     selectedDay,
-    onClick
+    onClick,
+    events
 }) => {
     let isInCurrentMonth = currentMonth === month
-    let isSelected =
-        day === selectedDay.day &&
-        month === selectedDay.month &&
-        year === selectedDay.year
+    let isSelected = isThisDay({ year, month, day }, selectedDay)
+    let hasEvent = Boolean(
+        events.filter(({ date }) => isThisDay(date, { year, month, day }))
+            .length
+    )
     return (
         <S.Day
             onClick={() => onClick({ year, month, day })}
             isSelected={isSelected}
+            hasEvent={hasEvent}
             isInCurrentMonth={isInCurrentMonth}
             day={day}>
             {day}

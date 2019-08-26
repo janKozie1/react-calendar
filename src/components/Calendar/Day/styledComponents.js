@@ -7,8 +7,8 @@ export let Day = styled(Cell)`
     &::after {
         position: absolute;
         font-size: 19px;
-        width: 75%;
-        height: 75%;
+        width: 80%;
+        height: 80%;
         border-radius: 50%;
         background: transparent;
         content: '';
@@ -27,7 +27,23 @@ export let Day = styled(Cell)`
 
         /* clip-path: circle(80% at 50% 50%); */
     }
-    ${({ isSelected }) =>
+    ${({ hasEvent }) =>
+        hasEvent &&
+        css`
+            &::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                background: ${({ theme: { colors } }) => colors.main};
+                border-radius: 50%;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translate(-50%);
+                z-index: 2;
+            }
+        `}
+    ${({ isSelected, hasEvent }) =>
         isSelected &&
         css`
             &:after {
@@ -37,6 +53,14 @@ export let Day = styled(Cell)`
                 color: white;
                 background: ${({ theme: { colors } }) => colors.main};
             }
+            &:before {
+                ${() => {
+                    if (isSelected && hasEvent) {
+                        return css`
+                            background: white;
+                        `
+                    }
+                }}
         `}
     ${({ isInCurrentMonth }) =>
         !isInCurrentMonth &&

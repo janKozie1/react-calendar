@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Todo from './Todo'
+import Todo from './Todos'
 import { useStateValue } from '../../store'
 import { getDayType, getDayName, getMonthName } from '../../logic/functions'
 
@@ -13,7 +13,6 @@ const DayInfo = () => {
         },
         dispatch
     ] = useStateValue()
-    console.log(getMonthName(year, month))
     return (
         <S.DayInfo>
             <S.Header>
