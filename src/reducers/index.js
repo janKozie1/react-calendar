@@ -20,6 +20,9 @@ export let rootReducer = (state, action) => {
                 ...state,
                 eventDetailsOpen: false
             }
+        case 'UPDATE_EVENT':
+            console.log(action.payload)
+            return { ...state }
         default:
             return { ...state }
     }

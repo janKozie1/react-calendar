@@ -1,12 +1,12 @@
 import React from 'react'
 
 import { useStateValue } from '../../../store'
-import { getMonthName } from '../../../logic/functions'
+import { getMonthName, getYearMonthDay } from '../../../logic/functions'
 import { emptyEvent } from '../../../defaults'
 import * as S from './styledComponents'
 
 const Events = () => {
-    const [{ events }, dispatch] = useStateValue()
+    const [{ events, selectedDay }, dispatch] = useStateValue()
     let openEventView = data => {
         dispatch({
             type: 'SHOW_EVENT_DETAILS',
@@ -17,7 +17,14 @@ const Events = () => {
         <S.Container>
             <S.Title>
                 Upcoming Events{' '}
-                <S.Icon onClick={() => openEventView(emptyEvent)} />
+                <S.Icon
+                    onClick={() =>
+                        openEventView({
+                            ...emptyEvent,
+                            date: selectedDay
+                        })
+                    }
+                />
             </S.Title>
             <S.EventList>
                 {events.map((e, i) => {

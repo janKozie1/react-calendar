@@ -52,7 +52,7 @@ export let emptyEvent = {
         month: null,
         day: null
     },
-    time: {
+    hours: {
         start: '',
         end: ''
     }

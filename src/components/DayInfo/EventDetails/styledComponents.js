@@ -13,7 +13,8 @@ export let Container = styled.div`
     transition: transform 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    color: white;
     ${({ shown }) =>
         shown &&
         css`
@@ -54,24 +55,37 @@ export let Button = styled.button`
         font-weight:bolder;
     `}
 `
-export let Title = styled.label`
+export let Header = styled.h3`
     font-size: 40px;
     color: white;
     display: flex;
     flex-direction: column;
-
-    span {
-        margin-bottom: 20px;
-    }
+    margin-bottom: 30px;
+`
+export let Form = styled.form`
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 2em;
+    grid-auto-rows: max-content;
+    grid-row-gap: 1em;
+    align-items: center;
+    flex: 1;
+`
+export let Title = styled.label`
+    font-size: 20px;
 `
 
 export let Input = styled.input`
     border: 0;
-    width: 50%;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.6);
+    width: 200px;
+    padding: 8px 20px;
+    background: transparent;
     font-family: inherit;
     border: 2px solid white;
     color: white;
-    margin-left: 20px;
+    font-size: 15px;
 `
+
+export let Date = styled(Title)``
+
+export let Time = styled(Title)``
