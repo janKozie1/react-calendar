@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-
+import { ReactComponent as trash } from '../../../assets/icons/trash.svg'
 export let Container = styled.div`
     height: 100%;
     width: 100%;
@@ -59,9 +59,22 @@ export let Header = styled.h3`
     font-size: 40px;
     color: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `
+
+export let Delete = styled(trash)`
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    > path {
+        fill: white;
+    }
+`
+
 export let Form = styled.form`
     display: grid;
     grid-template-columns: auto 1fr;
@@ -70,6 +83,7 @@ export let Form = styled.form`
     grid-row-gap: 1em;
     align-items: center;
     flex: 1;
+    margin-left: 0px;
 `
 export let Title = styled.label`
     font-size: 20px;

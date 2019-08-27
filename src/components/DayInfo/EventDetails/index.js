@@ -48,7 +48,19 @@ const EventDetails = () => {
     }
     return (
         <S.Container shown={eventDetailsOpen}>
-            <S.Header>{data._id ? 'Modify' : 'Create new event'}</S.Header>
+            <S.Header>
+                <span>{data._id ? 'Modify' : 'Create new event'}</span>
+                {data._id && (
+                    <S.Delete
+                        onClick={() =>
+                            dispatch({
+                                type: 'DELETE_EVENT',
+                                payload: data._id
+                            })
+                        }
+                    />
+                )}
+            </S.Header>
             <S.Form>
                 <S.Title htmlFor='title'>
                     <span>Title:</span>
@@ -115,7 +127,10 @@ const EventDetails = () => {
                 <S.Button
                     primary
                     onClick={() =>
-                        dispatch({ type: 'UPDATE_EVENT', payload: data })
+                        dispatch({
+                            type: data._id ? 'UPDATE_EVENT' : 'CREATE_EVENT',
+                            payload: data
+                        })
                     }>
                     Save
                 </S.Button>

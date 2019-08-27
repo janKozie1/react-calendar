@@ -86,3 +86,16 @@ export let getRandomID = () => {
             .substr(2, 9)
     )
 }
+
+export let sortByDate = (a, b) => {
+    let getDate = obj => {
+        return new Date(
+            obj.date.year,
+            obj.date.month,
+            obj.date.day,
+            ...obj.hours.start.split(':').map(e => parseInt(e))
+        )
+    }
+
+    return getDate(a).getTime() - getDate(b).getTime()
+}

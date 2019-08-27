@@ -8,8 +8,7 @@ export let defaultEvents = [
         hours: {
             start: '14:00',
             end: '14:50'
-        },
-        description: ''
+        }
     },
     {
         _id: getRandomID(),
@@ -18,8 +17,7 @@ export let defaultEvents = [
         hours: {
             start: '16:30',
             end: '19:20'
-        },
-        description: ''
+        }
     },
     {
         _id: getRandomID(),
@@ -28,8 +26,7 @@ export let defaultEvents = [
         hours: {
             start: '11:10',
             end: '12:05'
-        },
-        description: ''
+        }
     },
 
     {
@@ -39,8 +36,7 @@ export let defaultEvents = [
         hours: {
             start: '14:00',
             end: '14:50'
-        },
-        description: ''
+        }
     }
 ]
 
@@ -53,7 +49,7 @@ export let emptyEvent = {
         day: null
     },
     hours: {
-        start: '',
-        end: ''
+        start: '13:30',
+        end: '14:00'
     }
 }

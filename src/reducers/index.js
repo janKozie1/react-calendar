@@ -1,19 +1,19 @@
-import { getYearMonthDay } from '../logic/functions'
-export let rootReducer = (state, action) => {
-    switch (action.type) {
+import { getYearMonthDay, getRandomID, sortByDate } from '../logic/functions'
+export let rootReducer = (state, { type, payload }) => {
+    switch (type) {
         case 'CHANGE_DISPLAY_DATE':
-            let { year, month } = action.payload
+            let { year, month } = payload
             return {
                 ...state,
                 displayDate: getYearMonthDay(new Date(year, month))
             }
         case 'SELECT_DAY':
-            return { ...state, selectedDay: { ...action.payload } }
+            return { ...state, selectedDay: { ...payload } }
         case 'SHOW_EVENT_DETAILS':
             return {
                 ...state,
                 eventDetailsOpen: true,
-                selectedEvent: action.payload
+                selectedEvent: payload
             }
         case 'HIDE_EVENT_DETAILS':
             return {
@@ -21,8 +21,33 @@ export let rootReducer = (state, action) => {
                 eventDetailsOpen: false
             }
         case 'UPDATE_EVENT':
-            console.log(action.payload)
-            return { ...state }
+            return {
+                ...state,
+                events: [
+                    ...state.events
+                        .map(e => (e._id === payload._id ? payload : e))
+                        .sort(sortByDate)
+                ],
+                eventDetailsOpen: false
+            }
+        case 'CREATE_EVENT':
+            return {
+                ...state,
+                events: [
+                    ...[
+                        ...state.events,
+                        { ...payload, _id: getRandomID() }
+                    ].sort(sortByDate)
+                ],
+                eventDetailsOpen: false
+            }
+        case 'DELETE_EVENT':
+            return {
+                ...state,
+                events: state.events.filter(e => e._id !== payload),
+                eventDetailsOpen: false
+            }
+
         default:
             return { ...state }
     }
