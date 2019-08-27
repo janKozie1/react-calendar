@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { ReactComponent as trash } from '../../../assets/icons/trash.svg'
+import { ReactComponent as deleteIcon } from '../../../assets/icons/trash.svg'
 export let Container = styled.div`
     height: 100%;
     width: 100%;
@@ -28,6 +28,8 @@ export let Actions = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    bottom: 0;
+    position: absolute;
 `
 
 export let Button = styled.button`
@@ -66,7 +68,7 @@ export let Header = styled.h3`
     justify-content: space-between;
 `
 
-export let Delete = styled(trash)`
+export let Delete = styled(deleteIcon)`
     height: 30px;
     width: 30px;
     cursor: pointer;
@@ -83,6 +85,7 @@ export let Form = styled.form`
     grid-row-gap: 1em;
     align-items: center;
     flex: 1;
+    position: relative;
     margin-left: 0px;
 `
 export let Title = styled.label`
@@ -98,6 +101,11 @@ export let Input = styled.input`
     border: 2px solid white;
     color: white;
     font-size: 15px;
+    &:-internal-autofill-selected {
+        background-color: transparent !important;
+        background-image: linear-gradient(transparent, transparent) !important;
+        background: transparent !important;
+    }
 `
 
 export let Date = styled(Title)``

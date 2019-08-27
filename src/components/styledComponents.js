@@ -34,6 +34,10 @@ export const GlobalStyles = createGlobalStyle`
         display:flex;
         align-items:center;
         justify-content:center;
+        @media screen and (max-width:960px) {
+            flex-direction:column-reverse;
+            height:auto;
+        }
     }
 `
 

@@ -10,6 +10,9 @@ export let Container = styled.div`
     ${({ theme: { colors } }) => css`
         background: linear-gradient(to bottom, ${colors.main}, ${colors.dark});
     `}
+    @media screen and (max-width:960px) {
+        width: 100%;
+    }
 `
 
 export let DayInfo = styled.div`

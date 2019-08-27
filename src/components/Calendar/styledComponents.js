@@ -12,6 +12,9 @@ export const Calendar = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @media screen and (max-width: 960px) {
+        width: 100%;
+    }
 `
 export const Days = styled.div`
     display: grid;
@@ -19,6 +22,11 @@ export const Days = styled.div`
     grid-template-columns: repeat(7, 55px);
     grid-auto-rows: 52px;
     gap: 15px 15px;
+    @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(7, 12vw);
+        grid-auto-rows: 12vw;
+        gap: 5px;
+    }
 `
 
 export const Cell = styled.div`
@@ -42,6 +50,11 @@ export let Header = styled.header`
     align-items: center;
     justify-content: space-between;
     user-select: none;
+    @media screen and (max-width: 500px) {
+        width: 84vw;
+        grid-auto-rows: 12vw;
+        gap: 5px;
+    }
 `
 
 export let Month = styled.div`

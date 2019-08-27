@@ -46,6 +46,14 @@ const EventDetails = () => {
         const { hours } = data
         return { ...hours, [key]: value }
     }
+    let handleFormSubmit = e => {
+        e.preventDefault()
+        console.log('?')
+        dispatch({
+            type: data._id ? 'UPDATE_EVENT' : 'CREATE_EVENT',
+            payload: data
+        })
+    }
     return (
         <S.Container shown={eventDetailsOpen}>
             <S.Header>
@@ -61,7 +69,7 @@ const EventDetails = () => {
                     />
                 )}
             </S.Header>
-            <S.Form>
+            <S.Form onSubmit={e => handleFormSubmit(e)}>
                 <S.Title htmlFor='title'>
                     <span>Title:</span>
                 </S.Title>
@@ -113,28 +121,21 @@ const EventDetails = () => {
                         handleChange('hours', updateHours('end', value))
                     }
                 />
+                <S.Actions>
+                    <S.Button
+                        type='button'
+                        onClick={() =>
+                            dispatch({
+                                type: 'HIDE_EVENT_DETAILS'
+                            })
+                        }>
+                        Cancel
+                    </S.Button>
+                    <S.Button type='submit' primary>
+                        Save
+                    </S.Button>
+                </S.Actions>
             </S.Form>
-
-            <S.Actions>
-                <S.Button
-                    onClick={() =>
-                        dispatch({
-                            type: 'HIDE_EVENT_DETAILS'
-                        })
-                    }>
-                    Cancel
-                </S.Button>
-                <S.Button
-                    primary
-                    onClick={() =>
-                        dispatch({
-                            type: data._id ? 'UPDATE_EVENT' : 'CREATE_EVENT',
-                            payload: data
-                        })
-                    }>
-                    Save
-                </S.Button>
-            </S.Actions>
         </S.Container>
     )
 }

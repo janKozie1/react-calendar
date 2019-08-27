@@ -31,6 +31,7 @@ export let rootReducer = (state, { type, payload }) => {
                 eventDetailsOpen: false
             }
         case 'CREATE_EVENT':
+            console.log(state, payload)
             return {
                 ...state,
                 events: [

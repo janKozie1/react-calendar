@@ -64,9 +64,10 @@ export let getYearMonthDay = (date = new Date()) => {
 
 export let getDayType = day => {
     day = day + ''
-    if (/(?<!1)1$/.test(day)) return 'st'
-    if (/(?<!1)2$/.test(day)) return 'nd'
-    if (/(?<!1)3$/.test(day)) return 'rd'
+    if (/1\d/.test(day)) return 'th'
+    if (/1$/.test(day)) return 'st'
+    if (/2$/.test(day)) return 'nd'
+    if (/3$/.test(day)) return 'rd'
     return 'th'
 }
 
@@ -86,16 +87,14 @@ export let getRandomID = () => {
             .substr(2, 9)
     )
 }
-
+export let getDateObj = obj => {
+    return new Date(
+        obj.date.year,
+        obj.date.month,
+        obj.date.day,
+        ...obj.hours.start.split(':').map(e => parseInt(e))
+    )
+}
 export let sortByDate = (a, b) => {
-    let getDate = obj => {
-        return new Date(
-            obj.date.year,
-            obj.date.month,
-            obj.date.day,
-            ...obj.hours.start.split(':').map(e => parseInt(e))
-        )
-    }
-
-    return getDate(a).getTime() - getDate(b).getTime()
+    return getDateObj(a).getTime() - getDateObj(b).getTime()
 }
