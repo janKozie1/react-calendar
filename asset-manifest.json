@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/react-hooks-todo/static/js/main.a7ac2408.chunk.js",
-    "main.js.map": "/react-hooks-todo/static/js/main.a7ac2408.chunk.js.map",
-    "runtime~main.js": "/react-hooks-todo/static/js/runtime~main.64d82570.js",
-    "runtime~main.js.map": "/react-hooks-todo/static/js/runtime~main.64d82570.js.map",
-    "static/js/2.6cfa83ac.chunk.js": "/react-hooks-todo/static/js/2.6cfa83ac.chunk.js",
-    "static/js/2.6cfa83ac.chunk.js.map": "/react-hooks-todo/static/js/2.6cfa83ac.chunk.js.map",
-    "index.html": "/react-hooks-todo/index.html",
-    "precache-manifest.24f5ee72e6c05c65d9d6412516d07f5d.js": "/react-hooks-todo/precache-manifest.24f5ee72e6c05c65d9d6412516d07f5d.js",
-    "service-worker.js": "/react-hooks-todo/service-worker.js",
-    "static/media/add.c3478f94.svg": "/react-hooks-todo/static/media/add.c3478f94.svg",
-    "static/media/arrow.7e3d59cb.svg": "/react-hooks-todo/static/media/arrow.7e3d59cb.svg",
-    "static/media/thin_arrow.4243aced.svg": "/react-hooks-todo/static/media/thin_arrow.4243aced.svg",
-    "static/media/trash.d7ee0422.svg": "/react-hooks-todo/static/media/trash.d7ee0422.svg"
+    "main.js": "/react-calendar/static/js/main.a7ac2408.chunk.js",
+    "main.js.map": "/react-calendar/static/js/main.a7ac2408.chunk.js.map",
+    "runtime~main.js": "/react-calendar/static/js/runtime~main.f9d585d1.js",
+    "runtime~main.js.map": "/react-calendar/static/js/runtime~main.f9d585d1.js.map",
+    "static/js/2.6f7cf0e5.chunk.js": "/react-calendar/static/js/2.6f7cf0e5.chunk.js",
+    "static/js/2.6f7cf0e5.chunk.js.map": "/react-calendar/static/js/2.6f7cf0e5.chunk.js.map",
+    "index.html": "/react-calendar/index.html",
+    "precache-manifest.551a68f1fbf7c3c664744b6007a41e8d.js": "/react-calendar/precache-manifest.551a68f1fbf7c3c664744b6007a41e8d.js",
+    "service-worker.js": "/react-calendar/service-worker.js",
+    "static/media/add.c3478f94.svg": "/react-calendar/static/media/add.c3478f94.svg",
+    "static/media/arrow.7e3d59cb.svg": "/react-calendar/static/media/arrow.7e3d59cb.svg",
+    "static/media/thin_arrow.4243aced.svg": "/react-calendar/static/media/thin_arrow.4243aced.svg",
+    "static/media/trash.d7ee0422.svg": "/react-calendar/static/media/trash.d7ee0422.svg"
   }
 }
