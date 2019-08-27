@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/react-hooks-todo/static/js/main.a7ac2408.chunk.js",
+    "main.js.map": "/react-hooks-todo/static/js/main.a7ac2408.chunk.js.map",
+    "runtime~main.js": "/react-hooks-todo/static/js/runtime~main.64d82570.js",
+    "runtime~main.js.map": "/react-hooks-todo/static/js/runtime~main.64d82570.js.map",
+    "static/js/2.6cfa83ac.chunk.js": "/react-hooks-todo/static/js/2.6cfa83ac.chunk.js",
+    "static/js/2.6cfa83ac.chunk.js.map": "/react-hooks-todo/static/js/2.6cfa83ac.chunk.js.map",
+    "index.html": "/react-hooks-todo/index.html",
+    "precache-manifest.24f5ee72e6c05c65d9d6412516d07f5d.js": "/react-hooks-todo/precache-manifest.24f5ee72e6c05c65d9d6412516d07f5d.js",
+    "service-worker.js": "/react-hooks-todo/service-worker.js",
+    "static/media/add.c3478f94.svg": "/react-hooks-todo/static/media/add.c3478f94.svg",
+    "static/media/arrow.7e3d59cb.svg": "/react-hooks-todo/static/media/arrow.7e3d59cb.svg",
+    "static/media/thin_arrow.4243aced.svg": "/react-hooks-todo/static/media/thin_arrow.4243aced.svg",
+    "static/media/trash.d7ee0422.svg": "/react-hooks-todo/static/media/trash.d7ee0422.svg"
+  }
+}
